@@ -1,26 +1,31 @@
 Feature: This is Homework2
   This is the description of feature file
 
-  @mytag
-  Scenario: The name of scenario
-    Given I open the browser
-    And I am on the google homepage
-    Then  I should  fill The First and last name
-    And  I should  fill The age
-
-  Scenario: The name of  second scenario
-    Then  I should  write the  Country:
-    And  I should  write the  a Notes
-
-  Scenario: The name of  third scenario
-    Then  I should  submit the form
-    Then I close the  browser
+  Background:
+    Given open the website
 
 
+  Scenario: S01: Filling The input Form
+    Then Insert "Sara" and "Abdulaizi" and "23"
+    And Select the "Saudi Arabia"
+    Then Click on submit button
+    Then Verfiy "Input Validation Response" Displayed
+    And Close the browser
 
 
+  Scenario: S02: Filling The input Form
+    Then Insert "Reemo" and "Yousef" and "29"
+    And Select the "Bahamas"
+    Then Click on submit button
+    Then Verfiy "Input Validation Response" Displayed
+    And Close the browser
 
-
+  Scenario: S03: Filling The input Form
+    Then Insert "Alixander" and "AhamadAlii" and "34"
+    And Select the "Egypt"
+    Then Click on submit button
+    Then Verfiy "Input Validation Response" Displayed
+    And Close the browser
 
 
 

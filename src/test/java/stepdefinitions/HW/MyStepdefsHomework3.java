@@ -15,47 +15,50 @@ import java.time.Duration;
 
 public class MyStepdefsHomework3 {
     WebDriver driver;
-    @Then("I should  fill The First and last name")
-    public void iShouldFillTheFirstAndLastName() {
-        driver= new ChromeDriver();
+
+    @Given("open the website")
+    public void open_the_website() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://testpages.eviltester.com/styled/validation/input-validation.html");
+
+
+    }
+    @Then("Insert {string} and {string} and {string}")
+    public void insert_and_and(String string, String string2, String string3) {
         driver.findElement(By.id("firstname")).sendKeys("Alex");
         driver.findElement(By.id("surname")).sendKeys("Alii");
-//        driver.findElement(By.id("age")).sendKeys("33");
-    }
+          driver.findElement(By.id("age")).sendKeys("33");
 
-    @And("I should  fill The age")
-    public void iShouldFillTheAge() {
-        driver.findElement(By.id("age")).sendKeys("33");
 
 
     }
-
-    @Then("I should  write the  Country:")
-    public void iShouldWriteTheCountry() {
-        WebElement country = driver.findElement(By.id("country"));
-        Select select = new Select(country);
-        select.deselectByIndex(4);
-
-    }
-
-    @And("I should  write the  a Notes")
-    public void iShouldWriteTheANotes() {
-//      WebElement addnote=  driver.findElement(By.id("notes"));
-//      addnote.click();
-//       addnote.sendKeys(" student  at SDA");
+    @Then("Select the {string}")
+    public void select_the(String country) {
+        WebElement SelectCountry = driver.findElement(By.id("country"));
+        Select select = new Select(SelectCountry);
+        select.selectByVisibleText(country);
+       // driver.findElements(By.id("notes"))
 
     }
+    @Then("Click on submit button")
+    public void click_on_submit_button() {
+        driver.findElement(By.xpath("//input['type =submit'][4]")).click();
 
-    @Then("I should  submit the form")
-    public void iShouldSubmitTheForm() {
-//        driver.findElement(By.xpath("//input['type =submit'][4]")).click();
+
 
     }
+    @Then("Verfiy {string} Displayed")
+    public void verfiy_displayed(String verfiymessage) {
+        WebElement validationMessage = driver.findElement(By.xpath("//*[text()='Input Validation Response']"));
+        Assert.assertTrue(validationMessage.getText().contains(verfiymessage));
 
-    @Then("I close the  browser")
-    public void iCloseTheBrowser() {
-//        driver.close();
+
+    }
+    @Then("Close the browser")
+    public void close_the_browser() {
+     //   driver.close();
 
     }
 }
