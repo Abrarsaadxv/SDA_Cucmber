@@ -26,10 +26,10 @@ public class MyStepdefsHomework3 {
 
     }
     @Then("Insert {string} and {string} and {string}")
-    public void insert_and_and(String string, String string2, String string3) {
-        driver.findElement(By.id("firstname")).sendKeys("Alex");
-        driver.findElement(By.id("surname")).sendKeys("Alii");
-          driver.findElement(By.id("age")).sendKeys("33");
+    public void insert_and_and(String Fname, String Lname, String age) {
+        driver.findElement(By.id("firstname")).sendKeys(Fname);
+        driver.findElement(By.id("surname")).sendKeys(Lname);
+          driver.findElement(By.id("age")).sendKeys(age);
 
 
 
