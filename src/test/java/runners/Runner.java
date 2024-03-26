@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-//        glue = "stepdefinitions",
-//        features = "src/test/resources/feateures",
-//        tags = "@mytag",
-//        dryRun = false
+        glue = "stepdefinitions",
+        features = "src/test/resources/feateures/ScenarioOutline.feature",
+        tags = "@mytag",
+        dryRun = false
 
 )
 public class Runner {

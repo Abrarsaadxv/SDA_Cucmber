@@ -7,5 +7,4 @@ Feature: This is Homework2
     Then  I should click on the "start" button and wait
     And Click on the "seconde" button and wait
     And  click on the "third" button and wait
-#    And Click on the "Fourth" button and wait
     Then close the browser
