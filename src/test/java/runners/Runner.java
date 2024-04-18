@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = {"stepdefinitions"},
-        features = {"src/test/resources/feateures/dataTable.feature"},
+        features = {"src/test/resources/feateures/Homworkes/H2_Cucumber.feature"},
         plugin = {"html:cucumber-reports/html/report.html", "json:cucumber-reports/json/report.json"},
         monochrome = true ,
         dryRun = false
