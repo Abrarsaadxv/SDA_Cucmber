@@ -19,7 +19,6 @@ public class datatablestepdef {
 //            for(int j=0; j <dataTable.get(i).size(); j++ ){
 //            }
         }
-        throw new io.cucumber.java.PendingException();
     }
     @Then("I should see String on the result")
     public void i_should_see_string_on_the_result(io.cucumber.datatable.DataTable dataTable) {
